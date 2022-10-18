@@ -1,18 +1,13 @@
 package se.lexicon;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class App {
 
-
     public static void main(String[] args) {
-        String[] stringArray = new String[3];
-        int[] numbers = new int[]{2, 4, 6, 8};
-        char[] letters = {'J', 'A', 'V', 'A'};
 
-        ex6();
 
+        ex10();
     }
 
 
@@ -92,7 +87,97 @@ public class App {
     }
 
     public static void ex6() {
+// Write a program which will set up an array to hold the next values in this
+//order: 43, 5, 23, 17, 2, 14 and print the average of these 6 numbers.
+//Expected output:Average is: 17.3
+        double[] numArray = {43, 5, 23, 17, 2, 14};
 
-System.out.println("hello");
+        Printing.printNumbersAverage(numArray);
+        //^^ This code is found in Printing.Java in the public static printNumbersAverage
+    }
+
+    public static void ex7() {
+        //Write a program which will set up an array to hold 10 numbers and print
+        //out only the uneven numbers.
+        //Expected output:Array: 1 2 4 7 9 12
+        //                Odd Array: 1 7 9
+        int[] numArray = {43, 5, 23, 17, 2, 14, 1, 7, 3, 4};
+
+        Arrays.sort(numArray);
+//even Array 2 4 14
+        Printing.printArrayEven(numArray);
+
+        System.out.println("   ");
+//odd Array 1 3 5 7 17 23 43
+        Printing.printArrayOdd(numArray);
+
+    }
+
+    public static void ex8() {
+        //Write a program which will remove the duplicate elements of a given
+        //array [20, 20, 40, 20, 30, 40, 50, 60, 50].
+        //Expected output:Array: 20 20 40 20 30 40 50 60 50
+        //                Array without duplicate values: 20 40 30 50 60
+
+        int[] numArray = {20, 20, 40, 20, 30, 40, 50, 60, 50};
+        Printing.printArraySideWay(numArray);
+        System.out.println(" ");
+
+        // This is the copy and I modified and changed the value on each "box"
+        int[] numArray2 = Arrays.copyOf(numArray, numArray.length - 4);
+        numArray2[0] = 20;
+        numArray2[1] = 40;
+        numArray2[2] = 30;
+        numArray2[3] = 50;
+        numArray2[4] = 60;
+        Printing.printArraySideWay(numArray2);
+
+    }
+
+    public static void ex9() {
+        //Write a method which will add elements in an array.
+        // Remember that arrays are fixed in size so you need to come up with a
+        //solution to “expand” the array.
+
+        String[] names = new String[0]; // This is an empty Array
+        Printing.addArrayExName(names, "Marcus"); // This create a new Array whit in this case a new name.
+        Printing.addArrayExName(names, "Mikael");
+        Printing.addArrayExName(names, "Mathias");
+    }
+
+    public static void ex10() {
+        //Write a program which will represent multiplication table stored in
+        //multidimensional array. Hint: You have two-dimensional array with values
+        //[[1,2,3,4,5,6,7,8,9,10], [1,2,3,4,5,6,7,8,9,10]]
+        int[][] bordNumbers = new int[10][10];
+        Multiplication_Table.infoMultibord(bordNumbers);
+
+    }
+
+    public static void ex11() {
+        //Write a program that ask the user for an integer and repeat that
+        //question until user give you a specific value that user already has been
+        //told about as a message in your program. Store these values in an array
+        //and print that array. After that reverse the array elements so that the
+        //first element becomes the last element, the second element becomes
+        //the second to last element, etc. Do not just reverse the order in which
+        //they are printed. You need to change the way they are stored in the array.
+
+
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
